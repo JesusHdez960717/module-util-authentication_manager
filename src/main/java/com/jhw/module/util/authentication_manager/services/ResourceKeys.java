@@ -10,5 +10,7 @@ package com.jhw.module.util.authentication_manager.services;
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
 public class ResourceKeys {
-    public static final String MSG_CONFIRM_LOGOUT = "msg.auth_manager.logout.confirm";
+
+    public static final String MSG_LOGOUT_DONE = "msg.auth_manager.logout.done";
+    
 }
