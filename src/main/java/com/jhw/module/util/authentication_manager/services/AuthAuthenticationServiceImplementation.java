@@ -31,4 +31,9 @@ public class AuthAuthenticationServiceImplementation implements AuthenticationHa
         return RESTHandler.login(user, pass, args);
     }
 
+    @Override
+    public boolean logout() {
+        return RESTHandler.logout();
+    }
+
 }
