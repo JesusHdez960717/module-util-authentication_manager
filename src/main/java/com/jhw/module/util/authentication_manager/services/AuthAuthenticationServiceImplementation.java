@@ -7,6 +7,8 @@ package com.jhw.module.util.authentication_manager.services;
 
 import com.clean.core.app.services.AuthenticationHandler;
 import com.clean.core.app.services.AuthenticationHandlerService;
+import com.clean.core.app.services.Notification;
+import com.clean.core.app.services.NotificationsGeneralType;
 import com.jhw.module.util.rest_config.services.RESTHandler;
 import java.util.Map;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
@@ -28,7 +30,11 @@ public class AuthAuthenticationServiceImplementation implements AuthenticationHa
 
     @Override
     public boolean login(String user, String pass, Map<String, Object> args) {
-        return RESTHandler.login(user, pass, args);
+        boolean answ = RESTHandler.login(user, pass, args);
+        if (answ) {
+            Notification.showNotification(AuthNotificationService.NOTIFICATION_LOGIN, user);
+        }
+        return answ;
     }
 
     @Override
