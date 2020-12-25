@@ -2,9 +2,9 @@ plugins {
     id 'java'
 }
 
-group = 'com.jhw.module.gestion'
+group = 'com.jhw.module.util'
 
-version = '1.0.0.SNAPSHOT.20201219'
+version = '1.1.0.SNAPSHOT.20201225'
 
 repositories {
     jcenter()

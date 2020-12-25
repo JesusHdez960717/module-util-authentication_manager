@@ -11,6 +11,7 @@ import com.clean.core.app.services.NotificationsGeneralType;
 import com.clean.core.domain.services.Resource;
 import com.clean.swing.app.AbstractSwingApplication;
 import com.clean.swing.app.RootView;
+import com.jhw.module.util.authentication_manager.services.AuthNotificationService;
 import com.jhw.module.util.authentication_manager.services.ResourceKeys;
 import com.jhw.swing.material.components.button._MaterialButtonIconTransparent;
 import com.jhw.swing.material.standards.MaterialColors;
@@ -44,7 +45,7 @@ public class UserControl extends _MaterialButtonIconTransparent {
 
     private JPopupMenu createMenu() {
         JPopupMenu menu = new JPopupMenu();
-        menu.add(new AbstractAction("Salir", MaterialIcons.POWER_SETTINGS_NEW) {
+        menu.add(new AbstractAction("Cerrar sesión", MaterialIcons.POWER_SETTINGS_NEW) {
             @Override
             public void actionPerformed(ActionEvent e) {
                 closeAction();
@@ -54,9 +55,11 @@ public class UserControl extends _MaterialButtonIconTransparent {
     }
 
     private void closeAction() {
-        AuthenticationHandler.logout();
-        app.navigateTo(RootView.LOGIN_NAME);
-        Notification.showNotification(NotificationsGeneralType.NOTIFICATION_WARNING, Resource.getString(ResourceKeys.MSG_LOGOUT_DONE));
+        if (Notification.showConfirmDialog(AuthNotificationService.CONFIRM_LOGOUT, "")) {
+            AuthenticationHandler.logout();
+            app.navigateTo(RootView.LOGIN_NAME);
+            Notification.showNotification(AuthNotificationService.NOTIFICATION_LOGOUT, Resource.getString(ResourceKeys.MSG_LOGOUT));
+        }
     }
 
     private void addListeners() {

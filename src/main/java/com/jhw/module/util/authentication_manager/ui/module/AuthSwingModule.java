@@ -6,6 +6,7 @@ import com.clean.swing.app.DefaultAbstractSwingMainModule;
 import com.clean.swing.app.dashboard.DashBoardSimple;
 import com.clean.swing.app.dashboard.DashboardConstants;
 import com.jhw.module.util.authentication_manager.services.AuthAuthenticationServiceImplementation;
+import com.jhw.module.util.authentication_manager.services.AuthNotificationService;
 import com.jhw.module.util.authentication_manager.services.AuthResourceServiceImplementation;
 import com.jhw.module.util.authentication_manager.ui.usuario.UserControl;
 
@@ -19,6 +20,7 @@ public class AuthSwingModule extends DefaultAbstractSwingMainModule {
     public static AuthSwingModule init() {
         System.out.println("Iniciando 'Manager de Autenticacion'");
         AuthAuthenticationServiceImplementation.init();
+        AuthNotificationService.init();
         try {
             AuthResourceServiceImplementation.init();
         } catch (Exception e) {
