@@ -59,7 +59,7 @@ public class AuthNotificationService extends NotificationServiceFunctional {
     protected void addConfirmDialog() {
         super.addConfirmDialog(AuthNotificationService.CONFIRM_LOGOUT, (Object t)
                 -> JOptionPane.showConfirmDialog(null, Resource.getString(ResourceKeys.MSG_LOGOUT_CONFIRM),
-                        "Cerrar sesión",
+                        Resource.getString(ResourceKeys.MSG_SESION_CLOSE),
                         JOptionPane.OK_CANCEL_OPTION,
                         JOptionPane.QUESTION_MESSAGE) == 0);
     }
