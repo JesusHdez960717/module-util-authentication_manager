@@ -1,8 +1,8 @@
 package com.jhw.module.util.authentication_manager.ui.module;
 
-import com.clean.core.app.services.NavigationService;
-import com.jhw.swing.derivable_icons.DerivableIcon;
-import com.jhw.swing.material.standards.MaterialIcons;
+import com.root101.clean.core.app.services.NavigationService;
+import com.root101.swing.derivable_icons.DerivableIcon;
+import com.root101.swing.material.standards.MaterialIcons;
 
 /**
  *

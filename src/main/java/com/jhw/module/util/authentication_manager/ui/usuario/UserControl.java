@@ -5,17 +5,17 @@
  */
 package com.jhw.module.util.authentication_manager.ui.usuario;
 
-import com.clean.core.app.services.AuthenticationHandler;
-import com.clean.core.app.services.Notification;
-import com.clean.core.app.services.NotificationsGeneralType;
-import com.clean.core.domain.services.Resource;
-import com.clean.swing.app.AbstractSwingApplication;
-import com.clean.swing.app.RootView;
+import com.root101.clean.core.app.services.AuthenticationHandler;
+import com.root101.clean.core.app.services.NotificationHandler;
+import com.root101.clean.core.app.services.NotificationsGeneralType;
+import com.root101.clean.core.domain.services.ResourceHandler;
+import com.root101.clean.swing.app.AbstractSwingApplication;
+import com.root101.clean.swing.app.RootView;
 import com.jhw.module.util.authentication_manager.services.AuthNotificationService;
 import com.jhw.module.util.authentication_manager.services.ResourceKeys;
-import com.jhw.swing.material.components.button._MaterialButtonIconTransparent;
-import com.jhw.swing.material.standards.MaterialColors;
-import com.jhw.swing.material.standards.MaterialIcons;
+import com.root101.swing.material.components.button._MaterialButtonIconTransparent;
+import com.root101.swing.material.standards.MaterialColors;
+import com.root101.swing.material.standards.MaterialIcons;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -55,10 +55,10 @@ public class UserControl extends _MaterialButtonIconTransparent {
     }
 
     private void closeAction() {
-        if (Notification.showConfirmDialog(AuthNotificationService.CONFIRM_LOGOUT, "")) {
+        if (NotificationHandler.showConfirmDialog(AuthNotificationService.CONFIRM_LOGOUT, "")) {
             AuthenticationHandler.logout();
             app.navigateTo(RootView.LOGIN_NAME);
-            Notification.showNotification(AuthNotificationService.NOTIFICATION_LOGOUT, Resource.getString(ResourceKeys.MSG_LOGOUT));
+            NotificationHandler.showNotification(AuthNotificationService.NOTIFICATION_LOGOUT, ResourceHandler.getString(ResourceKeys.MSG_LOGOUT));
         }
     }
 

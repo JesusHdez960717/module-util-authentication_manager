@@ -1,9 +1,9 @@
 package com.jhw.module.util.authentication_manager.services;
 
-import com.clean.core.domain.services.Resource;
-import com.clean.core.domain.services.ResourceBundleUtils;
-import com.clean.core.domain.services.ResourceService;
-import com.clean.core.domain.services.DefaultResourceBundleService;
+import com.root101.clean.core.domain.services.ResourceHandler;
+import com.root101.clean.core.domain.services.ResourceBundleUtils;
+import com.root101.clean.core.domain.services.ResourceService;
+import com.root101.clean.core.domain.services.DefaultResourceBundleService;
 import java.net.MalformedURLException;
 
 /**
@@ -18,7 +18,7 @@ public class AuthResourceServiceImplementation implements ResourceService {
 
     public static AuthResourceServiceImplementation init() throws MalformedURLException {
         AuthResourceServiceImplementation res = new AuthResourceServiceImplementation();
-        Resource.registerResourceService(res);
+        ResourceHandler.registerResourceService(res);
         return res;
     }
 
