@@ -2,9 +2,9 @@ plugins {
     id 'java'
 }
 
-group = 'com.jhw.module.util'
+group = 'com.root101.module.util'
 
-version = '1.2.0.SNAPSHOT.20201228'
+version = '1.9.9.SNAPSHOT.20210108'
 
 repositories {
     jcenter()
@@ -15,9 +15,6 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-web', version: '5.2.9.RELEASE'
     compile group: 'org.springframework', name: 'spring-core', version: '5.2.9.RELEASE'
         
-    //JGit
-    compile group: 'org.eclipse.jgit', name: 'org.eclipse.jgit', version: '5.9.0.202009080501-r'
-    
     implementation project(':utils-core')
     implementation project(':utils-spring')
     
@@ -40,8 +37,4 @@ dependencies {
     implementation project(':utils-files')
     implementation project(':module-util-rest_config')
     
-}
-
-test {
-    useJUnitPlatform()
 }
