@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.jhw.module.util.authentication_manager.ui.usuario;
+package com.root101.module.util.authentication_manager.ui.usuario;
 
 import com.root101.clean.core.app.services.AuthenticationHandler;
 import com.root101.clean.core.app.services.NotificationHandler;
@@ -11,8 +11,8 @@ import com.root101.clean.core.app.services.NotificationsGeneralType;
 import com.root101.clean.core.domain.services.ResourceHandler;
 import com.root101.clean.swing.app.AbstractSwingApplication;
 import com.root101.clean.swing.app.RootView;
-import com.jhw.module.util.authentication_manager.services.AuthNotificationService;
-import com.jhw.module.util.authentication_manager.services.ResourceKeys;
+import com.root101.module.util.authentication_manager.services.AuthNotificationService;
+import com.root101.module.util.authentication_manager.services.ResourceKeys;
 import com.root101.swing.material.components.button._MaterialButtonIconTransparent;
 import com.root101.swing.material.standards.MaterialColors;
 import com.root101.swing.material.standards.MaterialIcons;

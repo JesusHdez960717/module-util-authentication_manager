@@ -1,4 +1,4 @@
-package com.jhw.module.util.authentication_manager.ui.module;
+package com.root101.module.util.authentication_manager.ui.module;
 
 import com.root101.clean.core.app.services.NavigationService;
 import com.root101.swing.derivable_icons.DerivableIcon;

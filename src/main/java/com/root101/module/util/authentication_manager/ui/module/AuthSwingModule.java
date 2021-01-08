@@ -1,14 +1,14 @@
-package com.jhw.module.util.authentication_manager.ui.module;
+package com.root101.module.util.authentication_manager.ui.module;
 
 import com.root101.clean.core.app.services.ExceptionHandler;
 import com.root101.clean.swing.app.AbstractSwingApplication;
 import com.root101.clean.swing.app.DefaultAbstractSwingMainModule;
 import com.root101.clean.swing.app.dashboard.DashBoardSimple;
 import com.root101.clean.swing.app.dashboard.DashboardConstants;
-import com.jhw.module.util.authentication_manager.services.AuthAuthenticationServiceImplementation;
-import com.jhw.module.util.authentication_manager.services.AuthNotificationService;
-import com.jhw.module.util.authentication_manager.services.AuthResourceServiceImplementation;
-import com.jhw.module.util.authentication_manager.ui.usuario.UserControl;
+import com.root101.module.util.authentication_manager.services.AuthAuthenticationServiceImplementation;
+import com.root101.module.util.authentication_manager.services.AuthNotificationService;
+import com.root101.module.util.authentication_manager.services.AuthResourceServiceImplementation;
+import com.root101.module.util.authentication_manager.ui.usuario.UserControl;
 
 public class AuthSwingModule extends DefaultAbstractSwingMainModule {
 

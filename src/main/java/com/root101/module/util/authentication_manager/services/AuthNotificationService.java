@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.jhw.module.util.authentication_manager.services;
+package com.root101.module.util.authentication_manager.services;
 
 import com.root101.clean.core.app.services.NotificationServiceFunctional;
 import com.root101.swing.material.standards.MaterialIcons;
 import com.root101.clean.core.app.services.NotificationHandler;
 import com.root101.clean.core.domain.services.ResourceHandler;
-import com.jhw.module.util.authentication_manager.ui.module.AuthModuleNavigator;
+import com.root101.module.util.authentication_manager.ui.module.AuthModuleNavigator;
 import com.jhw.module.util.personalization.core.domain.Personalization;
 import com.jhw.module.util.personalization.services.PersonalizationHandler;
 import com.root101.swing.notification.NotificationBuilder;
