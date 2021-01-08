@@ -1,24 +1,36 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright 2021 Root101 (jhernandezb96@gmail.com, +53-5-426-8660).
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Or read it directly from LICENCE.txt file at the root of this project.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-package com.jhw.module.util.authentication_manager.services;
+package com.root101.module.util.authentication_manager.services;
 
-import com.clean.core.app.services.NotificationServiceFunctional;
-import com.jhw.swing.material.standards.MaterialIcons;
-import com.clean.core.app.services.Notification;
-import com.clean.core.domain.services.Resource;
-import com.jhw.module.util.authentication_manager.ui.module.AuthModuleNavigator;
+import com.root101.clean.core.app.services.NotificationServiceFunctional;
+import com.root101.swing.material.standards.MaterialIcons;
+import com.root101.clean.core.app.services.NotificationHandler;
+import com.root101.clean.core.domain.services.ResourceHandler;
+import com.root101.module.util.authentication_manager.ui.module.AuthModuleNavigator;
 import com.jhw.module.util.personalization.core.domain.Personalization;
 import com.jhw.module.util.personalization.services.PersonalizationHandler;
-import com.jhw.swing.notification.NotificationBuilder;
-import com.jhw.swing.notification.NotificationFactory;
+import com.root101.swing.notification.NotificationBuilder;
+import com.root101.swing.notification.NotificationFactory;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
+ * @author Root101 (jhernandezb96@gmail.com, +53-5-426-8660)
+ * @author JesusHdezWaterloo@Github
  */
 public class AuthNotificationService extends NotificationServiceFunctional {
 
@@ -29,7 +41,7 @@ public class AuthNotificationService extends NotificationServiceFunctional {
 
     public static AuthNotificationService init() {
         AuthNotificationService notif = new AuthNotificationService();
-        Notification.registerNotificationService(notif);
+        NotificationHandler.registerNotificationService(notif);
         return notif;
     }
 
@@ -42,14 +54,14 @@ public class AuthNotificationService extends NotificationServiceFunctional {
         super.addNotification(AuthNotificationService.NOTIFICATION_LOGIN, (Object t) -> {
             NotificationFactory.buildNotificationTOAST(NotificationBuilder.builder().
                     delaySeconds(PersonalizationHandler.getInt(Personalization.KEY_INT_NOTIFICATION_DURATION))
-                    .text(Resource.getString(Resource.getString(ResourceKeys.MSG_LOGIN)) + "\n" + t.toString())
+                    .text(ResourceHandler.getString(ResourceHandler.getString(ResourceKeys.MSG_LOGIN)) + "\n" + t.toString())
                     .icon(MaterialIcons.PERSON)
                     .color(PersonalizationHandler.getColor(Personalization.KEY_COLOR_INFO)));
         });
         super.addNotification(AuthNotificationService.NOTIFICATION_LOGOUT, (Object t) -> {
             NotificationFactory.buildNotificationTOAST(NotificationBuilder.builder().
                     delaySeconds(PersonalizationHandler.getInt(Personalization.KEY_INT_NOTIFICATION_DURATION))
-                    .text(Resource.getString(ResourceKeys.MSG_LOGOUT))
+                    .text(ResourceHandler.getString(ResourceKeys.MSG_LOGOUT))
                     .icon(AuthModuleNavigator.ICON_LOGOUT)
                     .color(PersonalizationHandler.getColor(Personalization.KEY_COLOR_WARNING)));
         });
@@ -58,8 +70,8 @@ public class AuthNotificationService extends NotificationServiceFunctional {
     @Override
     protected void addConfirmDialog() {
         super.addConfirmDialog(AuthNotificationService.CONFIRM_LOGOUT, (Object t)
-                -> JOptionPane.showConfirmDialog(null, Resource.getString(ResourceKeys.MSG_LOGOUT_CONFIRM),
-                        Resource.getString(ResourceKeys.MSG_SESION_CLOSE),
+                -> JOptionPane.showConfirmDialog(null, ResourceHandler.getString(ResourceKeys.MSG_LOGOUT_CONFIRM),
+                        ResourceHandler.getString(ResourceKeys.MSG_SESION_CLOSE),
                         JOptionPane.OK_CANCEL_OPTION,
                         JOptionPane.QUESTION_MESSAGE) == 0);
     }
