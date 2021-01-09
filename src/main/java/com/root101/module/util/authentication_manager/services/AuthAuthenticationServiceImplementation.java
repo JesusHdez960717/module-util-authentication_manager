@@ -18,7 +18,7 @@ package com.root101.module.util.authentication_manager.services;
 
 import com.root101.clean.core.app.services.AuthenticationHandler;
 import com.root101.clean.core.app.services.NotificationHandler;
-import com.jhw.module.util.rest_config.services.RESTHandler;
+import com.root101.module.util.rest_config.services.RESTHandler;
 import java.util.Map;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import com.root101.clean.core.app.services.AuthenticationService;
